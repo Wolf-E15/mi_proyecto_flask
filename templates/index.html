@@ -2,90 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesador de Archivos XML</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h1 {
-            background-color: #3498db;
-            color: white;
-            padding: 20px;
-            margin: 0;
-        }
-
-        form {
-            margin: 20px auto;
-            padding: 20px;
-            width: 50%;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        label.custom-button {
-            display: block;
-            background-color: #8B0000; /* Color corinto */
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.1s;
-        }
-
-        label.custom-button:hover {
-            background-color: #B22222; /* Cambiar el color al pasar el mouse */
-            transform: translateY(-2px); /* Crear efecto de profundidad */
-        }
-
-        button[type="submit"] {
-            background-color: #8B0000; /* Color corinto */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.1s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #B22222; /* Cambiar el color al pasar el mouse */
-            transform: translateY(-2px); /* Crear efecto de profundidad */
-        }
-    </style>
 </head>
 <body>
-    <h1>CONVERTIR XML A EXCEL</h1>
+    <h1>Procesador de Archivos XML</h1>
     <form action="/procesar" method="post" enctype="multipart/form-data">
-        <input type="file" name="archivo_xml" id="archivo_xml" accept=".xml" required>
-        <label for="archivo_xml" class="custom-button">Elegir archivo XML</label>
-        <span id="file-count">Ningún archivo seleccionado</span>
-        <button type="submit">Procesar Archivo</button>
+        <input type="file" name="archivo_xml" accept=".xml" required>
+        <button type="submit">Procesar</button>
     </form>
-
-    <script>
-        const inputFile = document.getElementById("archivo_xml");
-        const fileCount = document.getElementById("file-count");
-
-        inputFile.addEventListener("change", () => {
-            if (inputFile.files.length > 0) {
-                fileCount.textContent = inputFile.files.length === 1
-                    ? "1 archivo seleccionado"
-                    : `${inputFile.files.length} archivos seleccionados`;
-            } else {
-                fileCount.textContent = "Ningún archivo seleccionado";
-            }
-        });
-    </script>
 </body>
 </html>
